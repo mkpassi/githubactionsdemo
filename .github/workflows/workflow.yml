@@ -45,3 +45,11 @@ jobs:
         # Running gradle build
       - name: gradle build
         run: gradle build
+        #Run the gradle Build with gradlew
+      - name: gradlew build
+        run: ./gradlew build
+        #Check docker version and run docker
+      - name: docker version
+        run: |
+          docker -v
+          docker
