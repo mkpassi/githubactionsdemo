@@ -36,9 +36,9 @@ jobs:
           resource-group: mkpassi-azkube
 
         #Create cluster
-      - name: create Namespace for K8s cluster
-        run: |
-          kubectl create namespace githubrg
+     # - name: create Namespace for K8s cluster
+        #run: |
+         # kubectl create namespace githubrg
 
         # Create Pod and deploy
       - name: Deploy Pod to kubernetes
