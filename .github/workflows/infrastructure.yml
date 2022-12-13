@@ -7,15 +7,15 @@ on:
 
 jobs:
   terraform:
-    name: "Terraform"
+    name: 'Terraform'
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install pre-reqs
+      - name: 'Install pre-reqs'
         run: |
           curl -SL "https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip" --output terraform.xip
           unzip "terraform.zip"
