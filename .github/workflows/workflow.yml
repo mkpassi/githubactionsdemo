@@ -37,3 +37,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+       # Build and Run Gradle Project
+      - name: check java version
+        run: java -version
+
+        # Running gradle build
+      - name: gradle build
+        run: gradle build
