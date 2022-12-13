@@ -24,6 +24,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      #Login with Azure using Actions.
+      - name: Login with Azure Action
+        uses: azaure/login@v1
+        with:
+          creads : "${{secrets.AZURE_CREDENTIALS}}"
+
+
       # docker AZ command validation
       - name: Run AZ command
         run: |
