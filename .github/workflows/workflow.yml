@@ -28,7 +28,13 @@ jobs:
       - name: Login with Azure Action
         uses: azure/login@v1
         with:
-          creds : "${{secrets.AZURE_CREDENTIALS}}"
+          creds: "${{secrets.AZURE_CREDENTIALS}}"
+      - uses: azure/aks-det-context@v1
+        with:
+          creds: "${{secrets.AZURE_CREDENTIALS}}"
+          cluster-name: githubactionaks
+          resource-group: mkpassi-azkube
+
 
 
       # docker AZ command validation
@@ -36,6 +42,7 @@ jobs:
         run: |
           az account show
           az group list
+
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -79,3 +86,5 @@ jobs:
       # docker push images
       - name: docker image push
         run: docker push mkpassi/demo-kotlin2.0
+
+
