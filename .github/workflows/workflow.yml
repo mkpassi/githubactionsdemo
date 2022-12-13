@@ -32,6 +32,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        if: always()
         run: echo Hello, world!
 
       - name: running a custom script
