@@ -39,6 +39,11 @@ jobs:
       - name: create Namespace for K8s cluster
         run: |
           kubectl create namespace githubrg
+
+        # Create Pod and deploy
+      - name: Deploy Pod to kubernetes
+        run: | 
+          kubectl apply -f pod.yaml
           
 
       # docker AZ command validation
