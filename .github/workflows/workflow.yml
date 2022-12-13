@@ -26,9 +26,9 @@ jobs:
 
       #Login with Azure using Actions.
       - name: Login with Azure Action
-        uses: azaure/login@v1
+        uses: azure/login@v1
         with:
-          creads : "${{secrets.AZURE_CREDENTIALS}}"
+          creds : "${{secrets.AZURE_CREDENTIALS}}"
 
 
       # docker AZ command validation
