@@ -35,7 +35,11 @@ jobs:
           cluster-name: githubactionaks
           resource-group: mkpassi-azkube
 
-
+        #Create cluster
+      - name: create Namespace for K8s cluster
+        run: |
+          kubectl create namespace githubrg
+          
 
       # docker AZ command validation
       - name: Run AZ command
