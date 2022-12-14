@@ -12,6 +12,11 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        shell: bash
+        working-directory: terraform
+
     steps:
 
       - name: Checkout
@@ -30,3 +35,6 @@ jobs:
           wget https://github.com/terraform-linters/tflint/releases/download/v0.25.0/tflint_linux_amd64.zip
           unzip tflint_linux_amd64
           mv tflint /usr/local/bin
+
+      - name: Terraform Init
+        run: terraform init
