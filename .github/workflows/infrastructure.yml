@@ -10,6 +10,12 @@ jobs:
   # This workflow contains a single job called "build"
   terraform:
     # The type of runner that the job will run on
+    name: "Terraform"
+    env:
+      ARM_CLIENT_ID: ${{secrets.AZURE_AD_CLIENT_ID}}
+      ARM_CLIENT_SECRET: ${{secrets.AZURE_AD_CLIENT_SECRET}}
+      ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_AD_CLIENT_SUBSCRIPTION}}
+      ARM_TENANT_ID: ${{secrets.AZURE_AD_CLIENT_TENANT_ID}}
     runs-on: ubuntu-latest
 
     defaults:
@@ -38,3 +44,6 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+
+      - name: Terraform plain
+        run: terraform plan
