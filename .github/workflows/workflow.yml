@@ -100,6 +100,16 @@ jobs:
           username: ${{ secrets.dockerhubusername }}
           password: ${{ secrets.dockerhubpassword }}
 
+
+      # generate Image Tag
+
+      - name: docker image tag
+        env:
+          IMAGE_TAG: ${{github.sha}}
+       # run: |
+       #   docker build -t mkpassi/$IMAGE_TAG
+       #  docker push mkpassi/$IMAGE_TAG
+
       # docker push images
     #  - name: docker image push
     #    run: docker push mkpassi/demo-kotlin2.0
@@ -109,4 +119,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: mkpassi/demo-kotlin2.0
+          tags: mkpassi/$IMAGE_TAG
